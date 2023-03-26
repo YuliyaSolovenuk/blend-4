@@ -1,5 +1,6 @@
 //TODO: 1 ===================================
 // Якщо змінна a дорівнює 10, виведіть 'Вірно', інакше виведіть 'Невірно'.
+
 // const a = 9;
 // if (a === 10) {
 //     console.log("Вірно");
@@ -64,6 +65,11 @@
 
 //TODO: 4 ===================================
 // скористаємося циклом while та виведіть у консоль числа від 0 до 50
+// let counter = 0;
+// while (counter <= 50) {
+//   console.log(counter);
+//   counter += 1;
+// }
 
 //TODO: 5 ===================================
 //Використовуючи конструкцію if...else,
@@ -73,7 +79,12 @@
 // показати через alert: "Вірно!"
 //інакше відобразити: "Не знаєте? ECMAScript!"
 
-// const question = prompt('Яка «офіційна» назва JavaScript?').toLowerCase();
+// const question = prompt("Яка «офіційна» назва JavaScript?").toLocaleLowerCase();
+// if (question === "ecmascript") {
+//   alert("Вірно");
+// } else {
+//   alert("Не знаєте? ECMAScript!");
+// }
 
 //TODO: 6 ===================================
 // Напишіть програму, яка отримає від користувача
@@ -81,6 +92,12 @@
 //рядок у форматі годин і хвилин
 //70 === 01:10
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+// const globalMinutes = 70;
+// const minutes = String(globalMinutes % 60).padStart(2, 0);
+// const hours = String(Math.floor(globalMinutes / 60)).padStart(2, 0);
+// console.log(minutes);
+// console.log(hours);
+// console.log(`${hours}:${minutes}`);
 
 //TODO: 7 ===================================
 //Напишіть цикл, який виводить у консоль
