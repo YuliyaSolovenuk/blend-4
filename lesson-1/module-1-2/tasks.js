@@ -216,14 +216,22 @@
 //TODO: 17 ===================================
 // напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
 // const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+function sumAdjacentNumbers(someArr) {
+let result = [];
 
-//? Answer
+for (let i = 0; i < someArr.length - 1; i +=1) {
+    result.push(someArr[i] + someArr[i + 1]);
+}
 
-//?
+//console.log(result);
+return result;
+}
 
-// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
-// const result = sumAdjacentNumbers(someArr);
-// console.log(result); // [33, 45, 39, 17, 25, 27, 29]
+const someArr = [29, 1, 4, 5, 12, 10, 15]; // [33, 45, 39, 17, 25, 27, 29]
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15]; // [33, 45, 39, 17, 25, 27, 29]
+const result = sumAdjacentNumbers(someArr);
+console.log(result); // [30, 5, 9, 17, 22, 25]
+
 
 //TODO: 18 ===================================
 //Напишіть функцію logItems(array), яка приймає
@@ -246,11 +254,18 @@
 // приймає рядок (параметр message) і форматує його,
 // якщо довжина перевищує значення параметрі maxLength.
 
-//? Answer
+// function formatMessage(message, maxLength) {
 
-//?
+// return message.length > maxLength ? message.slice(0, maxLength) + "..." : message; 
+
+
+// }
+// //? Answer
+
+
+// //?
 
 // console.log(formatMessage('Curabitur ligula sapien', 16)); //Повертає 'Curabitur ligula...'.
 // console.log(formatMessage('Curabitur ligula sapien', 23)); //Повертає 'Curabitur ligula sapien'.
 // console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 15)); //Повертає 'Nunc sed turpis...'.
-// console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 41)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'.
+// console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 2)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'.
