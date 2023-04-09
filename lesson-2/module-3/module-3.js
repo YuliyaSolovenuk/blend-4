@@ -15,9 +15,17 @@
 //   premium: true,
 // };
 
-//? Answer
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
 
-//?
+// console.log(Object.keys(user));
+// for (const item of Object.keys(user)) {
+//     console.log(`${item}:${user[item]}`);
+// }
+
+// console.log(Object.entries(user));
+
 
 //TODO:=========task-2=================
 // Потрібно написати функцію, яка приймає 2 параметри obj і key, яка буде перебирати об'єкт.
@@ -30,11 +38,13 @@
 //   carColor: 'black',
 // };
 
-//? Answer
+// function getBool(obj, str) {
+// // const keys = Object.keys(obj);
+// // return keys.includes(str);
+// };
 
-//?
-
-// console.log(getBool(obj, 'car')); // true
+// const  getBool = (obj, str) => str in obj;
+// console.log(getBool(obj, 'carr')); // true
 
 //TODO:==========task-3=============
 // У нас є об'єкт, у якому зберігатимуться зарплати
@@ -50,10 +60,12 @@
 // };
 
 // let sum = 0;
+// // const values = Object.values(salaries);
+// // console.log(values);
 
-//? Answer
-
-//?
+// for (const value of Object.values(salaries)) {
+//     sum += value;
+// };
 
 // console.log(sum);
 
