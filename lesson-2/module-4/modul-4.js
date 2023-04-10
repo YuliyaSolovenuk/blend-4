@@ -48,6 +48,17 @@
 // makeDish(dish), що пам'ятає ім'я шефа при її виклику
 // Функція makeDish має логірувати "<shef> is cooking <dish>"
 
+// function makeShef(shefName) {
+//   return function makeDish(dish) {
+//     console.log(`${shefName} is cooking ${dish}`)
+//   }
+// }
+
+// const shef1 = makeShef("Yuliya")
+// const shef2 = makeShef("Kate")
+// shef1("cake")
+// shef2("meat")
+
 //TODO:=================04=============================
 //Напишіть функцію each(array, callback), яка
 //першим параметром приймає масив, а другим - функцію,
@@ -56,7 +67,19 @@
 //якого будуть результати виклику callback
 //callback функції повинна множити елементи на 2
 
-const array = [3, 5, 6, 34, 8, 83, 12, 34];
+// const array = [3, 5, 6, 34, 8, 83, 12, 34];
+
+// function each(arr, callback) {
+// const newArray = []
+// for (const item of arr) {
+//   newArray.push(callback(item))
+// }
+// return newArray
+// }
+
+// const multy = (number) => number * 2;
+  
+// console.log(each(array, multy))
 
 //TODO:==================05============================
 //Напишіть функцію makeCounter, яка повертає іншу
@@ -77,7 +100,10 @@ const array = [3, 5, 6, 34, 8, 83, 12, 34];
 //TODO:=========task-8=================
 // ? Знайдіть перше непарне число
 
-// const numbers = [2, 1, 6, 8, 9, 10, 12]
+//  const numbers = [2, 3, 6, 8, 9, 10, 12, 1]
+
+// console.log(numbers.find((number) => number % 2 !== 0))
+
 
 //TODO:===========task-9===============
 
@@ -171,8 +197,14 @@ const users = [
 //TODO:==========================
 // Отримати масив імен всіх користувачів (поле name).
 
+//console.log(users.map((user) => user.name ))
+
 //TODO:==========================
 // Отримати масив об'єктів користувачів за кольором очей (eyeColor).
+
+// function getUsersByColor(arr, color) {
+//   return arr.filter((user) => user.eyeColor === color)
+// }
 
 // console.log(getUsersByColor(users, 'brown'))
 // console.log(getUsersByColor(users, 'blue')) // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
@@ -196,10 +228,16 @@ const users = [
 //TODO:==========================
 // Отримати загальну суму балансу (поле balance) всіх користувачів.
 
-// console.log(calculateTotalBalance(users)); // 20916
+ console.log(calculateTotalBalance(users)); // 20916
+
+function calculateTotalBalance(arr){
+ return arr.reduce((acc, user) => (user.balance += acc), 0)
+}
 
 //TODO:==========================
 // Масив імен всіх користувачів, у яких є товарищь із зазначеним ім'ям.
+
+
 
 // console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 // console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
