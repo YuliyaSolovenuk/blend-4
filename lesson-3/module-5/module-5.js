@@ -96,28 +96,27 @@
 //removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
 
 // Aswer:
-const Storage = function(itemsArray){
-  this.items = itemsArray
-}
+// const Storage = function(itemsArray){
+//   this.items = itemsArray
+// }
 
-Storage.prototype.getItems = function(){
-  return this.items
-}
+// Storage.prototype.getItems = function(){
+//   return this.items
+// }
 
-Storage.prototype.addItems = function(item){
-  this.items.push(item)
-  return this.items
-}
+// Storage.prototype.addItems = function(item){
+//   this.items.push(item)
+//   return this.items
+// }
 
-Storage.prototype.removeItem = function(item){
-this.items = this.items.filter((el) => el !== item)
-return this.items
-}
+// Storage.prototype.removeItem = function(item){
+// this.items = this.items.filter((el) => el !== item)
+// return this.items
+// }
 
-const storage = new Storage(["phone", "tablet"])
-console.log(storage)
-console.log(storage.removeItem("tablet"))
-
+// const storage = new Storage(["phone", "tablet"])
+// console.log(storage)
+// console.log(storage.removeItem("tablet"))
 /**
   |============================
   | Розкоментувати ; )
