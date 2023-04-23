@@ -6,6 +6,20 @@
 //greet(name) - коллбек, що приймає ім'я і логірує в консоль
 //Рядок "Привіт <name>"
 //Реалізуй перевірку, що prompt не порожній
+// function letMeSeeYourName(callback) {
+// const name = prompt("Enter name");
+// if (name) {
+//    callback(name);
+//    return;
+// }
+// console.log("enter name");
+// };
+
+// function greet(name) {
+//   console.log(`Hello ${name}`);
+// };
+
+// console.log(letMeSeeYourName(greet));
 
 //TODO:=================02=============================
 //Напишіть дві функції
@@ -16,11 +30,43 @@
 //Передаючи йому створений об'єкт.
 //showProduct(product) - коллбек приймаючий об'єкт
 //продукту і логірующий їх у консоль
+// function makeProduct(name, price, callback) {
+// // const id = new Date();
+// const id = Date.now(); //создает уникальній идентификатор - єто сек.
+// // console.log(id);
+// const product = {
+//   id, 
+//   name,
+//   price
+// }
+// callback(product);
+// };
+
+
+// // function showProduct(product) {
+// // console.log(`id: ${product.id}, name: ${product.name}, price: ${product.price}`);
+// // };
+// //деструктуризація
+// // function showProduct({id, name, price}) {
+// //   console.log(`id: ${id}, name: ${name}, price: ${price}`);
+// //   };
+
+// makeProduct("milk", 50, showProduct);
+
 
 //TODO:=================03=============================
 // Напишіть функцію makeShef(shefName), яка повертає функцію
 // makeDish(dish), що пам'ятає ім'я шефа при її виклику
 // Функція makeDish має логірувати "<shef> is cooking <dish>"
+// function makeShef(shefName){
+// return function makeDish(dish) {
+//   console.log(`${shefName} is cooking ${dish}`);
+// };
+// };
+
+// const shefOne = makeShef("Peter");
+// shefOne("desert");
+
 
 //TODO:=================04=============================
 //Напишіть функцію each(array, callback), яка
@@ -30,11 +76,41 @@
 //якого будуть результати виклику callback
 //callback функції повинна множити елементи на 2
 
-const array = [3, 5, 6, 34, 8, 83, 12, 34];
+// const array = [3, 5, 6, 34, 8, 83, 12, 34];
+
+// function each(arr, callback) {
+// const newArr = [];
+// for (const item of arr) {
+//   newArr.push(callback(item));
+// }
+// return newArr;
+// };
+
+// function multy(number) {
+//   return number*2;
+// }
+
+// console.log(each(array, multy));
+
 
 //TODO:==================05============================
 //Напишіть функцію makeCounter, яка повертає іншу
 //функцію, яка вважає та логує кількість своїх викликів
+
+// function makeCounter() {
+//   let count = 0;
+
+//   return () => (count += 1); //анонимная кол-бєк функция
+// }
+// const counter = makeCounter();
+
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+
+
 
 //TODO:==================06============================
 //Напишіть функцію savePassword(password), яка приймає
@@ -51,7 +127,10 @@ const array = [3, 5, 6, 34, 8, 83, 12, 34];
 //TODO:=========task-8=================
 // ? Знайдіть перше непарне число
 
-// const numbers = [2, 1, 6, 8, 9, 10, 12]
+// const numbers = [2, 10, 3, 8, 9, 10, 12]
+// console.log(numbers.find((number) => 
+// number % 2 !== 0))
+
 
 //TODO:===========task-9===============
 
@@ -142,11 +221,20 @@ const users = [
   },
 ];
 
+
+
 //TODO:==========================
 // Отримати масив імен всіх користувачів (поле name).
 
+// console.log(users.map(user => user.name));
+
 //TODO:==========================
 // Отримати масив об'єктів користувачів за кольором очей (eyeColor).
+
+// console.log(users.filter(user => user.eyeColor == "brown"));
+// function getUsersByColor(users, color) {
+// return users.filter(user => user.eyeColor == color);
+// };
 
 // console.log(getUsersByColor(users, 'brown'))
 // console.log(getUsersByColor(users, 'blue')) // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
@@ -169,7 +257,9 @@ const users = [
 
 //TODO:==========================
 // Отримати загальну суму балансу (поле balance) всіх користувачів.
-
+// function calculateTotalBalance(arr) {
+// return arr.reduce((prev, elem) => prev + elem.balance, 0);
+// }
 // console.log(calculateTotalBalance(users)); // 20916
 
 //TODO:==========================
@@ -213,6 +303,55 @@ const users = [
 //TODO:=========task-11=================
 // У кожному масиві якщо унікальний рядок, у якому не повторюються літери. Знайдіть і виведіть цей рядок.
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+
+// function findUniq(array) {
+//   let newArr = [];
+  
+//     for (let i = 0; i < array.length; i += 1) {
+//         newArr.push(array[i].charCodeAt(0));
+//         } 
+//         console.log(newArr);
+  
+//         const res = newArr.filter((el, i, arr) => arr.indexOf(el) === arr.lastIndexOf(el));
+//         // console.log(String.fromCharCode(102));  
+//         // console.log("abcd".charCodeAt(0)); 
+//         //  console.log(String.fromCodePoint(102)); 
+//         return res;
+//   }
+  
+/*1 -й вариант*/
+// function findUniq(array) {
+//   const sortArray = [...array].map((str) => {
+//     const stringWeight = str.split("").reduce((acc, latter) => (acc += latter.charCodeAt(0)), 0);
+//     return {str, stringWeight};
+   
+//   }).sort((a, b) => a.stringWeight - b.stringWeight);
+  
+//   const result = sortArray[0].stringWeight === sortArray[1].stringWeight ? sortArray[sortArray.length - 1].str : 
+//    sortArray[0].str;
+
+
+//   console.log(result);
+
+// }
+
+
+/*2 -й вариант*/
+// function findUniq(array) {
+//   return array.find((str, index, arr) => {
+//     const sortString  = str.split("").sort().join("");
+//     // console.log(sortString);
+//     return arr.every((elem, ind) => ind === index || sortString !== elem.split("").sort().join(''))
+//   })
+
+// }
+
+
+
+
+
+
+
 
 // console.log(findUniq(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba'])); // === 'foo'
 // console.log(findUniq(['fghj', 'ghfj', 'abcd', 'jhgf', 'fghj', 'fgjh', 'ghjf'])); // === 'abcd'

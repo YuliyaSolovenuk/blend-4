@@ -74,9 +74,15 @@
 // новий об'єкт без зазначених параметрів
 // Очікуваний результат ({a: 1, b: 2, c: 3}, 'b', 'a') => {c: 3}
 
-//? Answer
+// function updateObject(obj, ...args) {
+// const newObject = { ...obj };
+// console.log(args);
 
-//?
+// for (const item of args) {
+// delete newObject[item];
+// }
+// return newObject;
+// }
 
 // console.log(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'a')); // {c: 3}
 
@@ -92,10 +98,9 @@
 //   haveCar: true,
 //   merried: false,
 // };
-
-// ?Answer
-
-//?
+// function changeObject(obj) {
+// return console.log(Object.entries(obj));
+// };
 
 // changeObject(user);
 
@@ -110,9 +115,14 @@
 //   title: 'My menu',
 // };
 
-//? Answer
-
-//?
+// function multiplyNumeric(obj) {
+// for (let key in obj) {
+//     if (obj.hasOwnProperty(key) && typeof obj[key] === "number") {
+//        obj[key] *= 2;
+//     }
+// }
+// return obj;
+// };
 
 // console.log(multiplyNumeric(menu));
 
@@ -129,10 +139,19 @@
 /*
  * Виклики функції для перевірки працездатності твоєї реалізації.
  */
+// function findBestEmployee(obj) {
+//     let y = 0;
+//     let x;
+//     const keyy = 0;
+//     for (let key in obj) {
+//         if (obj[key] > y) {
+//             y = obj[key];
+//             x = key;
+//         } 
+//     }
+//     return x;
+// }
 
-//? Answer
-
-// //?
 
 // console.log(
 //   findBestEmployee({
