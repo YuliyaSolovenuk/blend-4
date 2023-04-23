@@ -154,18 +154,42 @@
 
 // Aswer:
 
-/**
-  |============================
-  | Розкоментувати ; )
-  |============================
-*/
+// class Client{
+//   #login
+//   #email
+
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+
+//   get clientData() {
+//     return { login: this.#login, email : this.#email}
+//   }
+
+//   set changeEmail(email) {
+//     this.#email = email;
+//   }
+
+//   set changeLogin(login) {
+//     this.#login = login;
+//   }
+
+//   }
+
+
+// /**
+//   |============================
+//   | Розкоментувати ; )
+//   |============================
+// */
 
 // const client = new Client('mango', 'mango@gmail.com')
 
 // client.changeEmail = 'mango555@gmail.com'
-// console.log(client.getClientData.email)
+// console.log(client.clientData.email)
 // client.changeLogin = '12345'
-// console.log(client.getClientData.login)
+// console.log(client.clientData.login)
 
 //TODO:=========task-8=================
 //Напиши клас Notes який управляє колекцією нотаток у
@@ -237,22 +261,49 @@
 //і який успадковує клас Worker, додаючи метод getHierarchyLevel
 //Реалізувати завдання за допомогою ES5 прототипів та ES6 класів
 
-// const HIERARCHY_LEVEL = {
-//     TOP: 'top',
-//     BOTTOM: 'bottom',
-// }
+const HIERARCHY_LEVEL = {
+    TOP: 'top',
+    BOTTOM: 'bottom',
+}
 
-// const workerObj = {
-//     name: 'Mango',
-//     surname: 'Worker',
-//     age: 30,
-//     position: 'FE developer',
-//     salary: 5000,
-// }
+const workerObj = {
+    name: 'Mango',
+    surname: 'Worker',
+    age: 30,
+    position: 'FE developer',
+    salary: 5000,
+}
 
 // ES5
-
 // Aswer:
+
+// const Worker = function (obj) {
+//   const { name, age, salary ,position, surname} = obj;
+
+//   this.name = name;
+//   this.age = age;
+//   this.salary = salary;
+//   this.surname = surname;
+//   this.position = position;
+
+// }
+
+// Worker.prototype.getSalary = function () {
+//   return this.salary;
+// }
+
+// const TopLevelWorker = function (obj,hierarchyLevel) {
+//   Worker.call(this, obj)
+  
+//   this.hierarchyLevel = hierarchyLevel;
+// }
+
+// TopLevelWorker.prototype.getHierarchyLevel = function () {
+//   return this.hierarchyLevel;
+// }
+
+// TopLevelWorker.prototype.getSalary = Worker.prototype.getSalary;
+
 
 /**
   |============================
@@ -267,6 +318,38 @@
 
 // ES6
 // Aswer:
+
+// class WorkerES6{
+
+//   constructor(obj) {
+//     const { name, age, salary, position, surname } = obj;
+
+//     this.name = name;
+//   this.age = age;
+//   this.salary = salary;
+//   this.surname = surname;
+//   this.position = position;
+//   }
+
+//   getSalary() {
+//     return this.salary;
+//   }
+// }
+
+// class TopLevelWorkerES6 extends WorkerES6{
+
+//   constructor(obj, hierarchyLevel) {
+//     super(obj);
+
+//     this.hierarchyLevel = hierarchyLevel;
+//   }
+
+//   getHierarchyLevel() {
+//     return this.hierarchyLevel;
+//   }
+// }
+
+
 
 /**
   |============================
