@@ -7,20 +7,20 @@
 //Рядок "Привіт <name>"
 //Реалізуй перевірку, що prompt не порожній
 // function letMeSeeYourName(callback) {
-// const name = prompt("Enter name");
-// if (name) {
-//    callback(name);
-//    return;
+
+//   const name = prompt("enter your name");
+//   if (name) {
+//     callback(name);
+//     return;
+//   }
+//   console.log("pales enter your name");
 // }
-// console.log("enter name");
-// };
+
 
 // function greet(name) {
 //   console.log(`Hello ${name}`);
-// };
-
-// console.log(letMeSeeYourName(greet));
-
+// }
+// letMeSeeYourName(greet);
 //TODO:=================02=============================
 //Напишіть дві функції
 //makeProduct(name, price, callback) - приймає
@@ -31,27 +31,20 @@
 //showProduct(product) - коллбек приймаючий об'єкт
 //продукту і логірующий їх у консоль
 // function makeProduct(name, price, callback) {
-// // const id = new Date();
-// const id = Date.now(); //создает уникальній идентификатор - єто сек.
-// // console.log(id);
-// const product = {
-//   id, 
-//   name,
-//   price
+
+//   const id = Date.now();
+//   const product = {
+//     id,
+//     name,
+//     price,
+//   };
+//   callback(product);
 // }
-// callback(product);
-// };
 
-
-// // function showProduct(product) {
-// // console.log(`id: ${product.id}, name: ${product.name}, price: ${product.price}`);
-// // };
-// //деструктуризація
-// // function showProduct({id, name, price}) {
-// //   console.log(`id: ${id}, name: ${name}, price: ${price}`);
-// //   };
-
-// makeProduct("milk", 50, showProduct);
+// function showProduct({ id, name, price }) {
+//   console.log(`id:${id}, name:${name}, price:${price}`);
+// }
+// makeProduct("milck", 50, showProduct);
 
 
 //TODO:=================03=============================
@@ -68,6 +61,17 @@
 // shefOne("desert");
 
 
+// function makeShef(shefName) {
+//   return function makeDish(dish) {
+//     console.log(`${shefName} is cooking ${dish}`)
+//   }
+// }
+
+// const shef1 = makeShef("Yuliya")
+// const shef2 = makeShef("Kate")
+// shef1("cake")
+// shef2("meat")
+
 //TODO:=================04=============================
 //Напишіть функцію each(array, callback), яка
 //першим параметром приймає масив, а другим - функцію,
@@ -79,18 +83,16 @@
 // const array = [3, 5, 6, 34, 8, 83, 12, 34];
 
 // function each(arr, callback) {
-// const newArr = [];
+// const newArray = []
 // for (const item of arr) {
-//   newArr.push(callback(item));
+//   newArray.push(callback(item))
 // }
-// return newArr;
-// };
-
-// function multy(number) {
-//   return number*2;
+// return newArray
 // }
 
-// console.log(each(array, multy));
+// const multy = (number) => number * 2;
+
+// console.log(each(array, multy))
 
 
 //TODO:==================05============================
@@ -126,11 +128,9 @@
 //! Методи масивів
 //TODO:=========task-8=================
 // ? Знайдіть перше непарне число
+//  const numbers = [2, 3, 6, 8, 9, 10, 12, 1]
 
-// const numbers = [2, 10, 3, 8, 9, 10, 12]
-// console.log(numbers.find((number) => 
-// number % 2 !== 0))
-
+// console.log(numbers.find((number) => number % 2 !== 0))
 
 //TODO:===========task-9===============
 
@@ -226,15 +226,18 @@ const users = [
 //TODO:==========================
 // Отримати масив імен всіх користувачів (поле name).
 
-// console.log(users.map(user => user.name));
+
+//console.log(users.map((user) => user.name ))
+
 
 //TODO:==========================
 // Отримати масив об'єктів користувачів за кольором очей (eyeColor).
 
-// console.log(users.filter(user => user.eyeColor == "brown"));
-// function getUsersByColor(users, color) {
-// return users.filter(user => user.eyeColor == color);
-// };
+
+// function getUsersByColor(arr, color) {
+//   return arr.filter((user) => user.eyeColor === color)
+// }
+
 
 // console.log(getUsersByColor(users, 'brown'))
 // console.log(getUsersByColor(users, 'blue')) // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
@@ -257,10 +260,14 @@ const users = [
 
 //TODO:==========================
 // Отримати загальну суму балансу (поле balance) всіх користувачів.
-// function calculateTotalBalance(arr) {
-// return arr.reduce((prev, elem) => prev + elem.balance, 0);
+
+
+//  console.log(calculateTotalBalance(users)); // 20916
+
+// function calculateTotalBalance(arr){
+//  return arr.reduce((acc, user) => (user.balance += acc), 0)
 // }
-// console.log(calculateTotalBalance(users)); // 20916
+
 
 //TODO:==========================
 // Масив імен всіх користувачів, у яких є товарищь із зазначеним ім'ям.

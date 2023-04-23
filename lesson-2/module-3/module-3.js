@@ -74,15 +74,9 @@
 // новий об'єкт без зазначених параметрів
 // Очікуваний результат ({a: 1, b: 2, c: 3}, 'b', 'a') => {c: 3}
 
-// function updateObject(obj, ...args) {
-// const newObject = { ...obj };
-// console.log(args);
+//? Answer
 
-// for (const item of args) {
-// delete newObject[item];
-// }
-// return newObject;
-// }
+//?
 
 // console.log(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'a')); // {c: 3}
 
@@ -98,9 +92,10 @@
 //   haveCar: true,
 //   merried: false,
 // };
-// function changeObject(obj) {
-// return console.log(Object.entries(obj));
-// };
+
+// ?Answer
+
+//?
 
 // changeObject(user);
 
@@ -115,14 +110,9 @@
 //   title: 'My menu',
 // };
 
-// function multiplyNumeric(obj) {
-// for (let key in obj) {
-//     if (obj.hasOwnProperty(key) && typeof obj[key] === "number") {
-//        obj[key] *= 2;
-//     }
-// }
-// return obj;
-// };
+//? Answer
+
+//?
 
 // console.log(multiplyNumeric(menu));
 
