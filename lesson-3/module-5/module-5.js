@@ -38,16 +38,32 @@
 //`Користувачеві ${} ${} років і в нього ${} публікацій.`
 
 // Aswer:
+// const User = function(userObj){
+//   const {userName, age, numbersOfPost} = userObj
+//   this.userName = userName
+//   this.age = age
+//   this.numbersOfPost = numbersOfPost
 
-/**
-  |============================
-  | Розкоментувати ; )
-  |============================
-*/
+//   //this.getInfo = function(){
+//   //   console.log(`Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`)
+//   // }
+// }
+
+// User.prototype.getInfo = function(){
+//      console.log(`Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`)
+//    }
+
+//    const mango = new User({userName: 'Mango', age: 32, numbersOfPost: 105})
+// /**
+//   |============================
+//   | Розкоментувати ; )
+//   |============================
+// */
 // const polly = new User({ userName: 'Polly', age: 30, numbersOfPost: 15 })
 // console.log(polly)
-// polly.getInfo()
-
+//  polly.getInfo()
+//  console.log(mango)
+//  mango.getInfo()
 //TODO:=========task-4=================
 // Напиши клас конструктор який створювати рядки
 
@@ -80,7 +96,27 @@
 //removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
 
 // Aswer:
+// const Storage = function(itemsArray){
+//   this.items = itemsArray
+// }
 
+// Storage.prototype.getItems = function(){
+//   return this.items
+// }
+
+// Storage.prototype.addItems = function(item){
+//   this.items.push(item)
+//   return this.items
+// }
+
+// Storage.prototype.removeItem = function(item){
+// this.items = this.items.filter((el) => el !== item)
+// return this.items
+// }
+
+// const storage = new Storage(["phone", "tablet"])
+// console.log(storage)
+// console.log(storage.removeItem("tablet"))
 /**
   |============================
   | Розкоментувати ; )
