@@ -4,7 +4,7 @@
 // const product = {
 //     price: 5000,
 //     showPrice() {
-//         console.log(price)
+//         console.log(this.price)
 //     },
 // }
 // product.showPrice()
@@ -23,7 +23,7 @@
 //     action()
 // }
 
-// callAction(product.showPrice)
+// callAction(product.showPrice.bind(product))
 
 // Anser:
 
@@ -86,10 +86,10 @@
   | Розкоментувати ; )
   |============================
 */
-const storage = new Storage(['apple', 'banana', 'mango'])
+// const storage = new Storage(['apple', 'banana', 'mango'])
 
-console.log(storage)
-console.log(storage.removeItem('apple'))
+// console.log(storage)
+// console.log(storage.removeItem('apple'))
 
 //TODO:=========task-6=================
 /**
@@ -201,20 +201,20 @@ console.log(storage.removeItem('apple'))
 //і який успадковує клас Worker, додаючи метод getHierarchyLevel
 //Реалізувати завдання за допомогою ES5 прототипів та ES6 класів
 
-const HIERARCHY_LEVEL = {
-    TOP: 'top',
-    BOTTOM: 'bottom',
-}
+// const HIERARCHY_LEVEL = {
+//     TOP: 'top',
+//     BOTTOM: 'bottom',
+// }
 
-const workerObj = {
-    name: 'Mango',
-    surname: 'Worker',
-    age: 30,
-    position: 'FE developer',
-    salary: 5000,
-}
+// const workerObj = {
+//     name: 'Mango',
+//     surname: 'Worker',
+//     age: 30,
+//     position: 'FE developer',
+//     salary: 5000,
+// }
 
-ES5
+// ES5
 
 // Aswer:
 
@@ -229,7 +229,7 @@ ES5
 // console.log(worker.getSalary())
 // console.log(worker.getHierarchyLevel())
 
-ES6
+// ES6
 // Aswer:
 
 /**
@@ -247,38 +247,38 @@ ES6
 // Створити гру за допомогою класів. Створити class Героя, Створити class гравця, Створити class гри.
 
 // Список Героїв
-const HERO_LIST = [
-    {
-        name: 'thor',
-        health: 2000,
-        damage: 300,
-    },
-    {
-        name: 'thanos',
-        health: 2200,
-        damage: 350,
-    },
-    {
-        name: 'hulk',
-        health: 2800,
-        damage: 400,
-    },
-]
+// const HERO_LIST = [
+//     {
+//         name: 'thor',
+//         health: 2000,
+//         damage: 300,
+//     },
+//     {
+//         name: 'thanos',
+//         health: 2200,
+//         damage: 350,
+//     },
+//     {
+//         name: 'hulk',
+//         health: 2800,
+//         damage: 400,
+//     },
+// ]
 
-// Створюємо екземпляр Гравця 1
-const player1 = new Player('John')
-// Выбираем Героя
-player1.selectHero('hulk')
+// // Створюємо екземпляр Гравця 1
+// const player1 = new Player('John')
+// // Выбираем Героя
+// player1.selectHero('hulk')
 
-// Створюємо екземпляр Гравця 2
-const player2 = new Player('Tom')
-// Обираємо Героя
-player2.selectHero('thor')
+// // Створюємо екземпляр Гравця 2
+// const player2 = new Player('Tom')
+// // Обираємо Героя
+// player2.selectHero('thor')
 
-// console.log(player1);
-// console.log(player2);
+// // console.log(player1);
+// // console.log(player2);
 
-const game = new Game(player1, player2)
-// console.log(game);
+// const game = new Game(player1, player2)
+// // console.log(game);
 
-// game.run() // Кнопка Start!
+// // game.run() // Кнопка Start!
