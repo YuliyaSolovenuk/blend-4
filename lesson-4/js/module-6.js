@@ -114,3 +114,77 @@ function onSubmit(event) {
   | забувай чистити розмітку перед її вставкою.
   |============================
 */
+
+let items = [];
+
+const formRef = document.querySelector('.js-todos__form');
+const todoListRef = document.querySelector('ul');
+
+formRef.addEventListener('submit', onClickSubmit)
+todoListRef.addEventListener('click', onBtnClick);
+
+
+function onClickSubmit(e) {
+  e.preventDefault();
+
+  const input = e.currentTarget.elements['user-todos'];
+  const todos = input.value.trim();
+
+  console.log(todos);
+
+  if (!todos) {
+    return alert('Pls add Todos!')
+  }
+
+  const item = {
+    id: Date.now(),
+    text: todos
+  }
+
+  items.push(item)
+  console.log(items);
+
+
+  updateList()
+
+  input.value = '';
+}
+
+function updateList() {
+  
+  const markup = items.map(el => {
+    const liEl = document.createElement('li');
+    const spanEl = document.createElement('span');
+    spanEl.textContent = el.text;
+
+
+    liEl.appendChild(spanEl);
+
+    const btnEl = document.createElement('button');
+    btnEl.type = 'button';
+    btnEl.setAttribute('data-id', el.id);
+    btnEl.classList.add('delete');
+    btnEl.textContent = 'Видалити'
+    
+
+    liEl.appendChild(btnEl);
+
+    return liEl
+
+  })
+
+  todoListRef.innerHTML = '';
+
+  todoListRef.append(...markup);
+
+
+}
+
+function onBtnClick(e) {
+ 
+  const todoId = Number(e.target.dataset.id);
+  
+  items = items.filter(({id}) => id !== todoId);
+  
+  updateList();
+}
