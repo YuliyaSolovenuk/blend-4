@@ -11,6 +11,47 @@
   |============================
 */
 
+const openModalBtnEl = document.querySelector('.js-modal-open')
+const becdropEl = document.querySelector('.js-backdrop')
+const closeModalBtnEl = document.querySelector('.js-modal-close')
+
+openModalBtnEl.addEventListener('click', onOpenModalBtnElClick)
+closeModalBtnEl.addEventListener('click', closeModalWindow)
+
+function onOpenModalBtnElClick(event) {
+  
+  becdropEl.classList.add('is-open')
+
+  window.addEventListener('keydown', onEscClick)
+  window.addEventListener('click', onBackdropClick)
+}
+
+function closeModalWindow(event) {
+
+  becdropEl.classList.remove('is-open')
+  window.removeEventListener('keydown', onEscClick)
+  window.removeEventListener('click', onBackdropClick)
+}
+
+
+function onEscClick(event) {
+  if (event.code !== "Escape") {
+   return
+ }
+
+ closeModalWindow()
+
+}
+
+function onBackdropClick(event) {
+
+  if (event.target !== becdropEl) {
+    return
+  }
+  closeModalWindow()
+}
+
+
 /**
   |============================
   | Робота з формою:
@@ -26,6 +67,32 @@
   |  - Після отправки почисти форму і реалізуй автоматичне закриття модального вікна
   |============================
 */
+
+const formEl = document.querySelector('.js-modal__form')
+
+formEl.addEventListener('submit', onSubmit)
+
+function onSubmit(event) {
+  event.preventDefault();
+
+  console.dir(event.currentTarget.name);
+  const { elements: { name, email, password } } = event.currentTarget
+  console.log(name, email, password);
+  if (!email.value  || !password.value ) {
+   return alert("email or password is empty")
+    
+  }
+
+  console.log({
+    name: name.value || 'Anonymous',
+    email: email.value,
+    password: password.value
+  });
+   
+  formEl.reset()
+  closeModalWindow()
+}
+
 
 //TODO:====================02====================================TODOS============================================================================================
 /**
