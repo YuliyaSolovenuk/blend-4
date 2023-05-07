@@ -1,0 +1,303 @@
+/**
+  |============================
+  | common
+  |============================
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #36393f;
+  color: #dcddde;
+  font-family: 'Whitney', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+section.calc {
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+  |============================
+  | components
+  |============================
+*/
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+button.modal-open,
+button.calc-btn__show {
+  background-color: #43b581;
+
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+button.modal-open:hover,
+button.calc-btn__show:hover {
+  background-color: #3fb072;
+}
+
+/**
+  |============================
+  | modal
+  |============================
+*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 500ms linear, visibility 500ms linear;
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96vw;
+  max-width: 450px;
+  height: 100vh;
+  max-height: 610px;
+  overflow-y: scroll;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    max-width: 528px;
+    max-height: 580px;
+  }
+}
+
+/**
+  |============================
+  | form
+  |============================
+*/
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.login-form label {
+  margin-bottom: 16px;
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  padding: 4px;
+  font: inherit;
+}
+
+/**
+  |============================
+  | calculate
+  |============================
+*/
+/* Контейнер для калькулятора */
+.calculator {
+  width: 270px;
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+/* Рядок з результатом */
+.calculator-display {
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.calculator-display input[type='text'] {
+  width: 100%;
+  font-size: 30px;
+  text-align: right;
+  border: none;
+  outline: none;
+}
+
+/* Рядки з кнопками */
+.calculator-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Кнопки калькулятора */
+.calculator-button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Кнопки для операцій */
+.calculator-button-orange {
+  color: #fff;
+  background-color: #ff8c00;
+}
+
+.calculator-button-orange:hover,
+.calculator-button-orange:focus {
+  color: #ff8c00;
+  background-color: #fff;
+}
+
+/* Кнопки для видалення та очистки */
+.calculator-button-gray {
+  color: #000;
+  background-color: #e0e0e0;
+}
+
+/* Кнопки для нуля і десяткової крапки */
+.calculator-button-double {
+  width: 110px;
+}
+
+/* Анімація при натисканні на кнопку */
+.calculator-button:active {
+  background-color: #d3d3d3;
+}
+
+/**
+  |============================
+  | todos
+  |============================
+*/
+
+.todos-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.todos-input {
+  background-color: #40444b;
+  border: none;
+  border-radius: 5px;
+  color: #dcddde;
+  flex-grow: 1;
+  font-size: 16px;
+  height: 36px;
+  margin-right: 10px;
+  padding: 8px;
+}
+
+button[type='submit'] {
+  background-color: #7289da;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+button[type='submit']:hover {
+  background-color: #677bc4;
+}
+
+li {
+  align-items: center;
+  background-color: #40444b;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+button.delete,
+button.calc-close {
+  background-color: #f04747;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+  margin-right: 8px;
+}
+
+button.delete:hover,
+button.calc-close:hover {
+  background-color: #d03c3c;
+}
+
+span.done {
+  color: red;
+  text-decoration: line-through;
+  font-style: italic;
+}
